@@ -1,24 +1,9 @@
 <script setup lang="ts">
-// UiKit Components
-import { UiButton } from '@ovchinnikov-lxs-frontend/ui-kit';
 
-const counter = useCounter();
 </script>
+
 <template>
-    <div class="IndexPage">
-        <div :class="$style.wrapper">
-            Index Page
-
-            <UiButton @click="counter++">
-                increment counter
-            </UiButton>
-        </div>
-    </div>
+    <section class="IndexPage">
+        Press double space to open menu
+    </section>
 </template>
-
-<style lang="scss" module>
-.wrapper {
-    width: 100%;
-    height: 100%;
-}
-</style>

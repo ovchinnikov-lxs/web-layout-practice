@@ -1,42 +1,106 @@
 <script setup lang="ts">
-// UiKit Components
-import { UiImage } from '@ovchinnikov-lxs-frontend/ui-kit';
-const imageUrl = 'https://images.unsplash.com/photo-1633409361618-c73427e4e206?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1780&q=80';
+const isOpened = ref(false);
+const isActive = ref(false);
 
-const counter = useCounter();
+let lastKeyPressTime = 0;
+
+onMounted(() => {
+    document.addEventListener('keydown', event => {
+        if (event.key === ' ' || event.keyCode === 32) {
+            const currentTime = new Date().getTime();
+            if (currentTime - lastKeyPressTime < 300) {
+                isOpened.value = !isOpened.value;
+            }
+            lastKeyPressTime = currentTime;
+        }
+    });
+});
+
 </script>
 
 <template>
     <div class="TheHeader">
-        <div :class="$style.wrapper">
-            <UiImage
-                :origin="imageUrl"
-                :class="$style.image"
-            />
+        <transition name="bottom" mode="out-in">
+            <div v-if="isOpened" class="wrapper">
 
-            <div> counter: {{ counter }}</div>
-        </div>
+                <div
+                    class="hum"
+                    tabindex="0"
+                    role="button"
+                    @click="isActive = !isActive"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <transition name="right" mode="out-in">
+                    <nav v-if="isActive" class="nav">
+                        <NuxtLink to="parallax-3d" class="link">parallax-3d</NuxtLink>
+                    </nav>
+                </transition>
+            </div>
+        </transition>
     </div>
 </template>
 
 
-<style lang="scss" module>
+<style scoped lang="scss">
 .wrapper {
-    position: relative;
     display: flex;
+    align-items: flex-start;
+    column-gap: calc(var(--ui-unit) * 8);
+    padding: calc(var(--ui-unit) * 4);
+}
+
+.hum {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 100%;
-    column-gap: calc(var(--ui-unit) * 4);
-    font-size: calc(var(--ui-unit) * 10);
+    justify-content: center;
+    flex-shrink: 0;
+    width: calc(var(--ui-col) * 2);
+    height: calc(var(--ui-col) * 2);
+    row-gap: calc(var(--ui-unit) * 2);
+    border-radius: 50%;
+    border: 3px solid var(--ui-white-color);
+    background-color: var(--ui-secondary-color);
+    outline: none;
+    pointer-events: auto;
+    transition: all .3s ease;
+    cursor: pointer;
 
     @include hover {
-        color: var(--ui-accent-color);
+        background-color: var(--ui-secondary-color);
+        opacity: .64;
+    }
+
+    span {
+        display: block;
+        width: calc(var(--ui-unit) * 8);
+        height: 2px;
+        background-color: var(--ui-white-color);
     }
 }
 
-.image {
-    width: 50px;
-    height: 50px;
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: calc(var(--ui-unit) * 3);
+    row-gap: calc(var(--ui-unit) * 3);
+    padding: calc(var(--ui-unit) * 4);
+    border-radius: calc(var(--ui-unit) * 8);
+    border: 3px solid var(--ui-white-color);
+    background: var(--ui-secondary-color);
+    pointer-events: auto;
+}
+
+.link {
+    color: var(--ui-white-color);
+    transition: color .3s ease;
+
+    @include hover {
+        color: var(--ui-black-color);
+    }
 }
 </style>

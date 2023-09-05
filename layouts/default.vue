@@ -1,17 +1,14 @@
 <template>
-    <div :class="$style.DefaultLayout">
-        <TheHeader :class="$style.header" />
+    <div class="DefaultLayout">
+        <TheHeader class="header"/>
 
-        <div :class="$style.container">
-            <slot />
-        </div>
-
-        <TheFooter :class="$style.footer" />
+        <slot />
     </div>
 </template>
 
-<style lang="scss" module>
+<style lang="scss" scoped>
 .DefaultLayout {
+    position: relative;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -19,12 +16,11 @@
     min-height: 100vh;
 }
 
-.header,
-.footer {
-    flex-shrink: 0;
-}
-
-.container {
-    flex-grow: 1;
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    pointer-events: none;
 }
 </style>

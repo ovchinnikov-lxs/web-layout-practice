@@ -1,4 +1,6 @@
-# Nuxt3-Template
+# Web-layout-practice
+
+*This is a simple example of web animations and layouts*
 
 ## Setup
 
