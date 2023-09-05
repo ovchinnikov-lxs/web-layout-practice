@@ -1,0 +1,1 @@
+import{_ as e,c,o}from"./entry.ad950a2d.js";const s={},n={class:"IndexPage"};function t(r,a){return o(),c("section",n," Press double space to open menu ")}const d=e(s,[["render",t]]);export{d as default};
