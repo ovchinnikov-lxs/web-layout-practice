@@ -36,7 +36,7 @@ onMounted(() => {
 
                 <transition name="right" mode="out-in">
                     <nav v-if="isActive" class="nav">
-                        <NuxtLink to="parallax-3d" class="link">parallax-3d</NuxtLink>
+                        <NuxtLink to="/parallax-3d" class="link">parallax-3d</NuxtLink>
                     </nav>
                 </transition>
             </div>

@@ -28,8 +28,8 @@ onMounted(() => {
     <section class="Parallax-3d">
         <div :style="styleList" class="wrapper">
             <div class="container">
-                <UiImage origin="/parallax-3d/layer-1.jpg" class="item layer-1"/>
-                <UiImage origin="/parallax-3d/layer-2.png" class="item layer-2"/>
+                <UiImage origin="/web-layout-practice/parallax-3d/layer-1.webp" class="item layer-1"/>
+                <UiImage origin="/web-layout-practice/parallax-3d/layer-2.webp" class="item layer-2"/>
                 <div class="item layer-3">
                     <div class="content">
                         <h1 class="title">
@@ -48,8 +48,8 @@ onMounted(() => {
                         </UiButton>
                     </div>
                 </div>
-                <UiImage origin="/parallax-3d/layer-5.png" class="item layer-5"/>
-                <UiImage origin="/parallax-3d/layer-6.png" class="item layer-6"/>
+                <UiImage origin="/web-layout-practice/parallax-3d/layer-5.webp" class="item layer-5"/>
+                <UiImage origin="/web-layout-practice/parallax-3d/layer-6.webp" class="item layer-6"/>
             </div>
         </div>
     </section>
