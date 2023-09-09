@@ -2,6 +2,10 @@
 // UiKit Components
 import { UiImage, UiButton } from '@ovchinnikov-lxs-frontend/ui-kit';
 
+useSeoMeta({
+    title: 'Parallax 3d',
+});
+
 const movePosition = reactive({
     x: 0,
     y: 0,
