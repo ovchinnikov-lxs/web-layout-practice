@@ -1,0 +1,1 @@
+import{_ as e,c,o as _}from"./entry.b891b9cd.js";const s={},n={class:"IndexPage"};function o(t,a){return _(),c("section",n," Press double space to open menu ")}const r=e(s,[["render",o],["__scopeId","data-v-13c44cb7"]]);export{r as default};
