@@ -2,7 +2,9 @@
     <div class="DefaultLayout">
         <TheHeader class="header"/>
 
-        <slot />
+        <div class="page">
+            <slot />
+        </div>
     </div>
 </template>
 
@@ -20,7 +22,12 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 10;
+    z-index: 2;
     pointer-events: none;
+}
+
+.page {
+    position: relative;
+    z-index: 1;
 }
 </style>

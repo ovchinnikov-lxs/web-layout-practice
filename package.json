@@ -17,6 +17,7 @@
     "dependencies": {
         "@nuxtjs/svg-sprite": "^1.0.2",
         "@ovchinnikov-lxs-frontend/ui-kit": "^2.9.1",
+        "gsap": "^3.12.2",
         "normalize.css": "^8.0.1"
     },
     "devDependencies": {

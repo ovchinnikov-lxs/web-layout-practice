@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     app: {
         baseURL: '/web-layout-practice/',
         head: {
+            title: 'Web Layout Practice',
             charset: 'utf-16',
             viewport: 'width=device-width, initial-scale=1',
             meta: [
