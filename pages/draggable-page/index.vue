@@ -36,7 +36,7 @@ onMounted(() => {
         });
 
         isLoading.value = false;
-    }, 200);
+    }, 500);
 });
 </script>
 
